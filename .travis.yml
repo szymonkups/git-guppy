@@ -8,7 +8,8 @@ notifications:
   email: false
 before_install:
   - npm install -g gulp
-  - npm install
   - npm install codecov.io
+install:
+  - npm install --ignore-scripts
 after_success:
   - "cat ./coverage/coverage-final.json | ./node_modules/codecov.io/bin/codecov.io.js"
